@@ -1,0 +1,30 @@
+name: artifact
+on: push
+env: 
+  artifact : test
+
+jobs: 
+  job1:
+   name: create and upload artifact
+   runs-on: ubuntu-latest
+   steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: create a fil
+        run: cat testing > file.txt
+      - name: upload artifact
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: ${{ env.artifact }}
+          path: ./file.txt
+
+  job2:
+   name: download and print artifact
+   runs-on: macos-latest
+   steps:
+      - name: download artifact
+        uses: actions/download-artifact@v1.0.0
+      - name: print artifact
+        run: cat ${{ env.artifact }}
+    
+   
