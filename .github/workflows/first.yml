@@ -1,0 +1,38 @@
+name: first
+on: push
+jobs:
+    job1:
+    name: ubuntu
+    runs-on: ubunti-latest
+    steps:
+          - name: checkout
+            uses: actions/checkout@v4
+          - name: print-date
+            run: date
+    job2: 
+    name: windows
+    runs-on: windows-latest
+    steps:
+         - name: checkout
+           uses: actions/checkout@v4
+         - run: Get-Date
+    job3:
+    name: mac
+    run-on: macos-latest
+    steps: 
+         - name:checkout
+           uses: actions/checkout@v4
+         - run: date
+    job4:
+    name: mc
+    run-on: macos-latest
+    needs: [job1,job2,job3]
+    steps: 
+         - name:checkout
+           uses: actions/checkout@v4
+         - run: date
+         
+  
+        
+         
+    
