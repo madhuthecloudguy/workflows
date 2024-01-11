@@ -26,7 +26,8 @@ jobs:
    steps:
       - name: download artifact
         uses: actions/download-artifact@v1.0.0
-        with: ${{ env.artifact }}
+        with: 
+         name: ${{ env.artifact }}
       - name: print artifact
         run: cat ${{ env.file-name }}.txt
     
