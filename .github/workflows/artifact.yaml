@@ -28,6 +28,7 @@ jobs:
         uses: actions/download-artifact@v1.0.0
         with: 
          name: ${{ env.artifact }}
+      - run: ls -ltr
       - name: print artifact
         run: cat ./${{ env.artifact }}/file
     
