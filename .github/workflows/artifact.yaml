@@ -11,7 +11,7 @@ jobs:
    steps:
       - name: checkout
         uses: actions/checkout@v1
-      - name: create a fil
+      - name: create a file
         run: echo "testing" > ${{ env.file-name}}
       - name: upload artifact
         uses: actions/upload-artifact@v1.0.0
@@ -29,6 +29,6 @@ jobs:
         with: 
          name: ${{ env.artifact }}
       - name: print artifact
-        run: cat ${{ env.artifact }}
+        run: cat ./${{ env.artifact }}/file
     
    
