@@ -5,10 +5,10 @@ jobs:
     name: ubuntu
     runs-on: ubunti-latest
     steps:
-          - name: checkout
-            uses: actions/checkout@v4
-          - name: print-date
-            run: date
+         - name: checkout
+           uses: actions/checkout@v4
+         - name: print-date
+           run: date
     job2: 
     name: windows
     runs-on: windows-latest
