@@ -28,7 +28,7 @@ jobs:
     run-on: macos-latest
     needs: [job1, job2, job3]
     steps: 
-    - name:checkout
+    - name: checkout
       uses: actions/checkout@v4
     - run: date
          
