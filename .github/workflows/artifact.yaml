@@ -12,12 +12,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1
       - name: create a fil
-        run: echo "testing" > file.txt
+        run: echo "testing" > file
       - name: upload artifact
         uses: actions/upload-artifact@v1.0.0
         with:
           name: ${{ env.artifact }}
-          path: ./${{ env.file-name}}.txt
+          path: ./${{ env.file-name}}
 
   job2:
    name: download and print artifact
@@ -29,6 +29,6 @@ jobs:
         with: 
          name: ${{ env.artifact }}
       - name: print artifact
-        run: cat ${{ env.file-name }}.txt
+        run: cat ${{ env.file-name }}
     
    
